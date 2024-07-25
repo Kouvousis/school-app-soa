@@ -36,7 +36,7 @@ public class TeacherDAOImpl implements ITeacherDAO {
 
     @Override
     public Teacher update(Teacher teacher) throws TeacherDAOException {
-        String sql = "UPDATE teachers SET firstname = ?, lastname = ?, WHERE id = ?";
+        String sql = "UPDATE teachers SET firstname = ?, lastname = ? WHERE id = ?";
 
         try (Connection connection = DBUtil.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql)) {
