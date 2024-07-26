@@ -41,6 +41,6 @@ public class Teacher {
 
     @Override
     public String toString() {
-        return "id=" + id + ", firstnmae=" + firstname + ", lastname=" + lastname;
+        return "id=" + id + ", firstname=" + firstname + ", lastname=" + lastname;
     }
 }
