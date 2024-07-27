@@ -13,7 +13,6 @@ import gr.aueb.cf.schoolapp.dto.TeacherReadOnlyDTO;
 import gr.aueb.cf.schoolapp.model.Teacher;
 import gr.aueb.cf.schoolapp.service.ITeacherService;
 import gr.aueb.cf.schoolapp.service.TeacherServiceImpl;
-import gr.aueb.cf.schoolapp.service.util.DBUtil;
 import gr.aueb.cf.schoolapp.validator.TeacherValidator;
 
 import javax.swing.JLabel;
@@ -25,14 +24,12 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.Serial;
 import java.util.Map;
 
 public class TeachersInsertFrame extends JFrame {
@@ -41,6 +38,7 @@ public class TeachersInsertFrame extends JFrame {
     private final ITeacherDAO teacherDAO = new TeacherDAOImpl();
     private final ITeacherService teacherService = new TeacherServiceImpl(teacherDAO);
 
+    @Serial
     private static final long serialVersionUID = 1L;
     private JPanel contentPane;
     private JTextField firstNameText;
@@ -136,19 +134,11 @@ public class TeachersInsertFrame extends JFrame {
                         firstnameMessage = errors.containsKey("firstname") ? errors.get("firstname") : "";
                         lastnameMessage = errors.containsKey("lastname") ? errors.get("lastname") : "";
 
-//                        if (!firstnameMessage.isEmpty()) {
-//                            errorFirstName.setText(firstnameMessage);
-//                        }
-
                         errorFirstName.setText(firstnameMessage);
 
                         if (!lastnameMessage.isEmpty()) {
                             errorLastName.setText(lastnameMessage);
                         }
-
-//                        if (firstnameMessage.isEmpty()) {
-//                            errorFirstName.setText("");
-//                        }
 
                         if (lastnameMessage.isEmpty()) {
                             errorLastName.setText("");
