@@ -1,7 +1,5 @@
-package gr.aueb.cf.schoolapp.service;
+package gr.aueb.cf.schoolapp.dao;
 
-import gr.aueb.cf.schoolapp.dao.ITeacherDAO;
-import gr.aueb.cf.schoolapp.dao.TeacherDAOImpl;
 import gr.aueb.cf.schoolapp.dao.exceptios.TeacherDAOException;
 import gr.aueb.cf.schoolapp.dao.util.DBHelper;
 import gr.aueb.cf.schoolapp.model.Teacher;
@@ -15,7 +13,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class TeacherServiceImplTest {
+class TeacherDAOTest {
 
     private static ITeacherDAO teacherDAO;
 
